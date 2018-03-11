@@ -99,12 +99,12 @@ get_header();
 				<?php
 				foreach ($prod_categories as $prod_cat) :
 					$cat_thumb_id = get_woocommerce_term_meta($prod_cat->term_id, 'thumbnail_id', true);
-					$cat_thumb_url = wp_get_attachment_image($cat_thumb_id, 'large');
+					$cat_thumb_url = wp_get_attachment_image($cat_thumb_id, 'large', "", array("class" => "img-responsive"));
 				?>
 				<div class="col-sm-6 col-md-6 col-lg-4 col-gallery filtr-item" data-category="1" data-sort="value">
 					<figcaption>
 						<div class="parent">
-							<img src="<?php echo $cat_thumb_url; ?>" alt="">
+							<?php echo $cat_thumb_url; ?>
 							<div class="child">
 								<h3><?php echo $prod_cat->name; ?></h3>
 								<p><?php echo $prod_cat->description; ?></p>
