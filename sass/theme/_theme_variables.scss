@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+// Use this file to overwrite the basic Bootstrap variables and add your own variables
+// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
+// Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
+/* $primary: #8753d5;  */ // Thats a sample how you could change a BootStrap variable.
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$font-family-sans-serif: "Montserrat", "Raleway", Roboto, Arial, sans-serif;
+
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+
+// $spacer: 1rem !default;
+// $navbar-padding-y : ($spacer / 2) !default; 
+// $navbar-padding-x : $spacer !default;
+// $navbar-nav-link-padding-x : .5rem !default;
+
+$jumbotron-padding: 2rem !default;
+$jumbotron-bg: $gray-100 !default;
+ 
+.gallery {
+	padding: 5rem 0;
+	.container-fluid {
+		padding-right: 0;
+		padding-left: 0;
+	}
+	.col-gallery {
+		padding: 0.1rem;
+		img {
+			width: 100%;
+		}
+	}
+}
+
+ul.category-filter {
+	display: block;
+	width: 100%;
+	height: auto;
+	text-align: center;
+	
+	li {
+		list-style: none;
+		text-transform: uppercase;
+		display: inline-block;
+		font-weight: 300;
+		padding: 0 1rem;
+		color: #696b6e;
+		letter-spacing: 0.1rem;
+		cursor: pointer;
+	}
+	li:hover {
+		color: #e8ba2d;
+	}
+	li.active { 
+		color: #e8ba2d;
+	}
+}
+
+.filtr-active {
+	color: #e8ba2d;
+	border: 1px solid #333;
+}
+
+.chocolat-overlay {
+	background-color: #000;
+	opacity: 0.8;
+}
+
+.parent {
+	width: 100%;
+	// height: auto; 
+	height: 310px; 
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.child {
+	opacity: 0;
+	background: rgba(0, 0, 0, 0.4);
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0; 
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	color: #fff;
+	border: 1px solid green;
+	padding-top: 20%;
+	h1,
+	h2,
+	h3 {
+		font-size: 2rem; // 1.2 
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	p {
+		color: #fff;
+	} 
+	a .fa {
+		font-size: 2rem;
+		color: #fff;
+	}
+	&.btn {
+		font-size: 0.7rem;
+		padding: 0.3rem 0.7rem 0.2rem 0.7rem;
+	}
+	&:before,
+	.parent img {
+		-webkit-transition: all 0.3s ease;
+		-moz-transition: all 0.3s ease;
+		-o-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+	}
+}
+
+.parent:hover .child,
+.parent:focus .child,
+.parent:hover img,
+.parent:focus img {
+	-ms-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	transform: scale(1.1);
+	opacity: 1; 
+}
+
+.container-fluid {
+	width: 100%;
+	padding: 0 2rem !important;
+	max-width: 1480px;
+}
