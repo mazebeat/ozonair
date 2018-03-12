@@ -18,13 +18,20 @@ get_header();
 ?>
  
 <style>
-.wrapper-navbar {
-	margin-top: 30px;
+/* .wrapper-navbar {
 	width: 100vw;
-	position: absolute;
+	position: sticky;
 	z-index: 999;
 	background: none !important;
+	margin-top: -60px;
 }
+
+ #carousel-home {
+	top: 0;
+	width: 100vw;
+	display: block;
+	clear: both;
+} 
 
 .bg-light {
 	background: none;
@@ -39,13 +46,16 @@ get_header();
 .carousel-item  img {
 	position: absolute;
 	 bottom: -100px;
-	/*height: 100vh !important; */
-	/* left: 50%; */
-	/* margin-left: -200px; */
 }
+
+.gallery {
+	position: relative;
+	display: block;
+	clear: both;
+} */
 </style>
 
-	<div id="carousel-home" class="carousel slide" data-ride="carousel">
+	<div id="carousel-home" class="carousel slide clearfix" data-ride="carousel">
 		<ol class="carousel-indicators">
 			<li data-target="#carousel-home" data-slide-to="0" class="active"></li>
 			<li data-target="#carousel-home" data-slide-to="1" class=""></li>
@@ -79,9 +89,7 @@ get_header();
 
 	<section class="gallery text-center">
 		<div class="container-fluid">
-			<a name="gallery"></a>
-			<h2 class="mb-4">Equipos</h2>
-				
+			
 			<!--Gallery Filter-->
 			<!-- <ul class="category-filter simplefilter mb-4">
 				<li class="active" data-filter="all">All</li>
@@ -90,18 +98,19 @@ get_header();
 				<li data-filter="3">Sunset</li>
 				<li data-filter="4">Human</li>
 			</ul> -->
-
-			<ul>
+			
 			<?php $prod_categories = get_terms('product_cat', array( 'orderby' => 'name', 'order' => 'ASC', 'hide_empty' => 0 )); ?>
-
-			<div class="row filtr-container chocolat-parent" data-chocolat-title="Portfolio">
+			
+			<h2 class="mb-4">Equipos</h2>
+			
+			<div class="row" data-chocolat-title="Equipos">
 
 				<?php
 				foreach ($prod_categories as $prod_cat) :
 					$cat_thumb_id = get_woocommerce_term_meta($prod_cat->term_id, 'thumbnail_id', true);
-					$cat_thumb_url = wp_get_attachment_image($cat_thumb_id, 'large', "", array("class" => "img-responsive"));
+					$cat_thumb_url = wp_get_attachment_image($cat_thumb_id, 'large', "", array("class" => "img-fluid"));
 				?>
-				<div class="col-sm-6 col-md-6 col-lg-4 col-gallery filtr-item" data-category="1" data-sort="value">
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-gallery filtr-item" data-category="1" data-sort="value">
 					<figcaption>
 						<div class="parent">
 							<?php echo $cat_thumb_url; ?>
@@ -116,6 +125,7 @@ get_header();
 				<?php endforeach; wp_reset_query(); ?>
 				
 			</div>
+		
 		</div>
 	</section>
 

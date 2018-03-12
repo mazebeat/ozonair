@@ -40,7 +40,7 @@ ul.category-filter {
 
 .parent {
   width: 100%;
-  height: 310px;
+  height: 32vh;
   margin: 0;
   overflow: hidden;
   position: relative;
@@ -49,7 +49,7 @@ ul.category-filter {
 
 .child {
   opacity: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.6);
   height: 100%;
   width: 100%;
   position: absolute;
@@ -59,11 +59,12 @@ ul.category-filter {
   transition: all 0.3s ease;
   color: #fff;
   border: 1px solid green;
-  padding-top: 20%; }
+  padding-top: 20vh;
+  overflow: hidden; }
   .child h1,
   .child h2,
   .child h3 {
-    font-size: 2rem; }
+    font-size: 1.8rem; }
   .child h1,
   .child h2,
   .child h3,
@@ -75,7 +76,7 @@ ul.category-filter {
     font-size: 2rem;
     color: #fff; }
   .child.btn, .wpcf7 input.child[type=submit] {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     padding: 0.3rem 0.7rem 0.2rem 0.7rem; }
   .child:before,
   .child .parent img {
