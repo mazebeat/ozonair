@@ -44,11 +44,12 @@ gulp.task( 'scss-for-prod', function() {
         .pipe( gulp.dest( paths.css ) )
         .pipe( rename( 'custom-editor-style.css' ) );
 
-    var pipe2 = source.pipe( clone() )
-        .pipe( minifycss() )
-        .pipe( rename( { suffix: '.min' } ) )
-        .pipe( gulp.dest( paths.css ) );
-    return merge( pipe1, pipe2 );
+     var pipe2 = source.pipe( clone() )
+            .pipe( cleanCSS( { compatibility: '*' } ) )
+            .pipe( rename( { suffix: '.min' } ) )
+            .pipe( sourcemaps.write( './' ) )
+            .pipe( gulp.dest( paths.css ) );
+        return merge( pipe1, pipe2 );
 });
 
 // Run:
@@ -83,10 +84,11 @@ gulp.task( 'sass', function() {
                 this.emit( 'end' );
             }
         } ) )
+        .pipe(sourcemaps.init({loadMaps: true}))
         .pipe( sass( { errLogToConsole: true } ) )
         .pipe( autoprefixer( 'last 2 versions' ) )
+        .pipe(sourcemaps.write(undefined, { sourceRoot: null }))
         .pipe( gulp.dest( paths.css ) )
-        .pipe( rename( 'custom-editor-style.css' ) );
     return stream;
 });
 
@@ -186,7 +188,11 @@ gulp.task( 'scripts', function() {
 
         // End - All BS4 stuff
 
-        paths.dev + '/js/skip-link-focus-fix.js'
+        paths.dev + '/js/skip-link-focus-fix.js',
+
+        // Adding currently empty javascript file to add on for your own themes´ customizations
+        // Please add any customizations to this .js file only!
+        paths.js + '/main.js'
     ];
   gulp.src( scripts )
     .pipe( concat( 'theme.min.js' ) )

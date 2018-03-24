@@ -23,28 +23,34 @@ $container = get_theme_mod('understrap_container_type');
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
 	<?php wp_head(); ?>
-	<link rel="stylesheet" href="https://medialoot.com/preview/sundown/css/chocolat.css">
 
+	<!-- <link rel="stylesheet" href="https://medialoot.com/preview/sundown/css/chocolat.css"> -->
+    <!-- <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115877672-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-115877672-1');
+	</script> -->	
 </head>
 
-<body <?php body_class(); ?>>
+<body id="page-top" <?php body_class(); ?>>
 
 <div class="hfeed site" id="page">
 
 	<!-- ******************* The Navbar Area ******************* -->
-	<header class="wrapper-fluid wrapper-navbar sticky-top" id="wrapper-navbar">
-
-		<a class="skip-link screen-reader-text sr-only" href="#content">
-		
-			<?php esc_html_e( 'Skip to content', 'understrap' ); ?>
-
-		</a>
-		
-		<nav class="navbar navbar-light bg-light navbar-expand-md justify-content-between" data-toggle="sticky-onscroll">
+	<!-- <header class="wrapper-fluid wrapper-navbar sticky-top" id="wrapper-navbar"> -->
+		<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" data-toggle="sticky-onscroll">
 
 			<?php if ('container' == $container) : ?>
-				<header class="container">
+				<div class="container">
 			<?php else : ?>		
 				<div class="container-fluid">
 			<?php endif; ?>
@@ -54,11 +60,11 @@ $container = get_theme_mod('understrap_container_type');
 
 				<?php if (is_front_page() && is_home()) : ?>
 
-					<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>"><?php bloginfo('name'); ?></a></h1>
+					<h1 class="navbar-brand mb-0 js-scroll-trigger"><a rel="home" href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>"><?php bloginfo('name'); ?></a></h1>
 					
 				<?php else : ?>
 
-					<a class="navbar-brand" rel="home" href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>"><?php bloginfo('name'); ?></a>
+					<a class="navbar-brand js-scroll-trigger" rel="home" href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>"><?php bloginfo('name'); ?></a>
 				
 				<?php endif; ?>
 					
@@ -68,16 +74,16 @@ $container = get_theme_mod('understrap_container_type');
 					the_custom_logo();
 				} ?><!-- end custom logo -->
 
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
 				<!-- The WordPress Menu goes here -->
 				<?php wp_nav_menu(array(
 					'theme_location' => 'primary',
-					'container_class' => 'collapse navbar-collapse justify-content-end',
-					'container_id' => 'navbarNavDropdown',
-					'menu_class' => 'navbar-nav ',
+					'container_class' => 'collapse navbar-collapse',
+					'container_id' => 'navbarResponsive',
+					'menu_class' => 'navbar-nav text-uppercase ml-auto',
 					'fallback_cb' => '',
 					'menu_id' => 'main-menu',
 					'walker' => new understrap_WP_Bootstrap_Navwalker(),
@@ -88,4 +94,4 @@ $container = get_theme_mod('understrap_container_type');
 
 		</nav><!-- .site-navigation -->
 
-	</header><!-- .wrapper-navbar end -->
+	<!-- </div>.wrapper-navbar end -->
