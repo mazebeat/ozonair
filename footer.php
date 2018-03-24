@@ -12,16 +12,16 @@ $the_theme = wp_get_theme();
 $container = get_theme_mod('understrap_container_type');
 ?>
 
-<?php get_sidebar('footerfull'); ?>
+<?php get_sidebar('footerfull');?>
 
 	<footer class="wrapper" id="wrapper-footer">
- 
+
 		<!-- <div class="<?php echo esc_attr($container); ?>"> -->
-		<?php if ('container' == $container) : ?>
+		<?php if ('container' == $container): ?>
 			<div class="container">
-		<?php else : ?>		
+		<?php else: ?>
 			<div class="container-fluid">
-		<?php endif; ?>
+		<?php endif;?>
 
 				<div class="site-footer" id="colophon">
 
@@ -30,13 +30,20 @@ $container = get_theme_mod('understrap_container_type');
 						<div class="site-info col-6">
 
 								<a href="<?php echo esc_url(__('http://www.ozonair.cl/', 'ozonair')); ?>">
-									<?php printf( /* translators:*/esc_html__('Copyright © Company. All rights reserved %s', 'ozonair'), 'Ozonair'); ?>
+									<?php printf( /* translators:*/esc_html__('Copyright © Company. All rights reserved %s', 'ozonair'), 'Ozonair');?>
 								</a>
 								<span class="sep"> | </span>
 						</div><!-- .site-info -->
 
 						<div class="col-4 text-right">
-							.
+							<ul class="list-inline quicklinks">
+								<li class="list-inline-item">
+									<a href="#">Privacy Policy</a>
+								</li>
+								<li class="list-inline-item">
+									<a href="#">Terms of Use</a>
+								</li>
+							</ul>
 						</div>
 
 					</><!-- #colophon -->
@@ -51,11 +58,11 @@ $container = get_theme_mod('understrap_container_type');
 
 </div><!-- #page we need this extra closing tag here -->
 
-<?php wp_footer(); ?>
+<?php wp_footer();?>
 
 <script type="text/javascript">
 	jQuery(document).ready(function(){
-		jQuery('#toggle-search').on('click', function(event) {        
+		jQuery('#toggle-search').on('click', function(event) {
 			jQuery('.search-field').toggle('show');
 		});
 	});

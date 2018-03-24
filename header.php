@@ -19,6 +19,9 @@ $container = get_theme_mod('understrap_container_type');
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?> - <?php bloginfo('description'); ?>">
+	
+	<meta name="description" content="<?php bloginfo('description'); ?>">
+	
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
@@ -47,7 +50,7 @@ $container = get_theme_mod('understrap_container_type');
 
 	<!-- ******************* The Navbar Area ******************* -->
 	<!-- <header class="wrapper-fluid wrapper-navbar sticky-top" id="wrapper-navbar"> -->
-		<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" data-toggle="sticky-onscroll">
+		<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" data-toggle="sticky-onscroll" style="font-weight: bold">
 
 			<?php if ('container' == $container) : ?>
 				<div class="container">

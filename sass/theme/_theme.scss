@@ -119,7 +119,7 @@ p {
 }
 
 a {
-	color: #fed136;
+	color: $color-main;
 }
 
 a:hover {
@@ -127,7 +127,7 @@ a:hover {
 }
 
 .text-primary {
-	color: #fed136 !important;
+	color: $color-main !important;
 }
 
 h1,
@@ -182,8 +182,8 @@ section h3.section-subheading {
 }
 
 .btn-primary {
-	background-color: #fed136;
-	border-color: #fed136;
+	background-color: $color-main;
+	border-color: $color-main;
 }
 
 .btn-primary:active,
@@ -201,12 +201,12 @@ section h3.section-subheading {
 
 
 ::-moz-selection {
-	background: #fed136;
+	background: $color-main;
 	text-shadow: none;
 }
 
 ::selection {
-	background: #fed136;
+	background: $color-main;
 	text-shadow: none;
 }
 
@@ -229,12 +229,12 @@ img::-moz-selection {
 	text-transform: uppercase;
 	color: white;
 	border: 0;
-	background-color: #fed136;
+	background-color: $color-main;
 	font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 #mainNav .navbar-brand {
-	color: #fed136;
+	color: $color-main;
 	font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive;
 }
 
@@ -256,7 +256,7 @@ img::-moz-selection {
 
 #mainNav .navbar-nav .nav-item .nav-link.active,
 #mainNav .navbar-nav .nav-item .nav-link:hover {
-	color: #fed136;
+	color: $color-main;
 }
 
 @media (min-width: 992px) {
@@ -344,6 +344,10 @@ header.masthead .intro-text .intro-heading {
 	}
 }
 
+#intro {
+	margin-top: 5rem;
+}
+ 
 .service-heading {
 	margin: 15px 0;
 	text-transform: none;
@@ -397,8 +401,8 @@ header.masthead .intro-text .intro-heading {
 	margin: 0;
 }
 
-#portfolio .portfolio-item .portfolio-caption {
-	max-width: 400px;
+#portfolio .portfolio-item .portfolio-caption { 
+	max-width: 400px; 
 	margin: 0 auto;
 	padding: 25px;
 	text-align: center;
@@ -408,7 +412,7 @@ header.masthead .intro-text .intro-heading {
 #portfolio .portfolio-item .portfolio-caption h4 {
 	margin: 0;
 	text-transform: none;
-}
+} 
 
 #portfolio .portfolio-item .portfolio-caption p {
 	font-size: 16px;
