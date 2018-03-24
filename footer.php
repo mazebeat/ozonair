@@ -41,7 +41,7 @@ $container = get_theme_mod('understrap_container_type');
 									<a href="#">Privacy Policy</a>
 								</li>
 								<li class="list-inline-item">
-									<a href="#">Terms of Use</a>
+									<a href="#">Terms of Use</a> 
 								</li>
 							</ul>
 						</div>

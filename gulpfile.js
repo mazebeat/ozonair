@@ -21,6 +21,17 @@ var gulpSequence = require("gulp-sequence");
 var replace = require("gulp-replace");
 var autoprefixer = require("gulp-autoprefixer");
 
+// Set the banner content
+var banner = [
+  "/*!\n",
+  " * Ozonair | Understrap - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n",
+  " * Copyright 2018 - " + new Date().getFullYear(),
+  " <%= pkg.author %>\n",
+  " * Licensed under <%= pkg.license %> (https://github.com/BlackrockDigital/<%= pkg.name %>/blob/master/LICENSE)\n",
+  " */\n",
+  ""
+].join("");
+
 // Configuration file to keep your code DRY
 var cfg = require("./gulpconfig.json");
 var paths = cfg.paths;
