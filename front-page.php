@@ -20,38 +20,44 @@ get_header();
 
 	<!-- Header -->
     <header class="masthead">
-    	<div class="container">
-        	<div class="intro-text">
-				<div class="intro-lead-in">Bienvenido a Ozonair!</div>
-          		<div class="intro-heading text-uppercase">Generadores de Ozono</div>
-          		<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Conocenos más</a>
-        	</div>
-      	</div>
+		<div class="container">
+			<div class="intro-text">
+				<h1 class="sr-only">Ozonair</h1>
+				<div class="intro-lead-in"> 
+					<!-- Bienvenido a Ozonair! -->
+					<img src="<?php echo wp_get_attachment_url(71); ?>" alt="Main Logotype" id="front-logotype" class="img-fluid">
+				</div>
+				<div class="intro-heading text-uppercase">
+					Generadores de Ozono
+				</div>
+				<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="<?php echo get_permalink( 65); ?>">Conocenos más</a>
+			</div>
+		</div>
 	</header>
 
 	<?php // get_header(); 
  ?>
 
-	<div id="intro">
+	<section id="intro" class="bg-light">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
-					<blockquote class="blockquote text-right">
+					<blockquote class="blockquote text-left">
 						<h2 class="mb-0">Tecnología Ozono para el bienestar de las personas.</h2>
 						<footer class="blockquote-footer">Empleamos tecnología, innovación y seguridad de alta calidad para el tratamiento del agua y aire a través de equipos que cumplen con los más altos estándares de calidad y seguridad con el propósito de crear ambientes libres de contaminación.</footer>
 					</blockquote> 
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
 	<!-- Services -->
 	<section id="services">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
-					<h2 class="section-heading text-uppercase">Services</h2>
-					<h3 class="section-subheading text-muted">...</h3>
+					<h2 class="section-heading text-uppercase">Servicios</h2>
+					<!-- <h3 class="section-subheading text-muted">...</h3> -->
 				</div>
 			</div>
 			<div class="row text-center">
@@ -88,7 +94,7 @@ get_header();
 			<div class="row">
 				<div class="col-lg-12 text-center">
 					<h2 class="section-heading text-uppercase">Equipos</h2>
-					<h3 class="section-subheading text-muted">...</h3>
+					<!-- <h3 class="section-subheading text-muted">...</h3> -->
 				</div>
 			</div>
 		
@@ -110,9 +116,8 @@ get_header();
 							<?php echo $cat_thumb_url; ?>
 						</a>
 						<div class="portfolio-caption">
-							<h4><?php echo $prod_cat->name; ?></h4>
+							<h4><a href="<?php echo get_category_link($prod_cat->term_id); ?>" class="btn btn-outline-white pill-btn" title=""><?php echo $prod_cat->name; ?></a></h4>
 							<p class="text-muted"><?php echo $prod_cat->description; ?></p>
-							<a href="<?php echo get_category_link($prod_cat->term_id); ?>" class="btn btn-outline-white pill-btn" title="">VER</a>
 						</div>
 					</div>
 				<?php endforeach; wp_reset_query();?>

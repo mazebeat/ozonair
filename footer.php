@@ -30,18 +30,19 @@ $container = get_theme_mod('understrap_container_type');
 						<div class="site-info col-6">
 
 								<a href="<?php echo esc_url(__('http://www.ozonair.cl/', 'ozonair')); ?>">
-									<?php printf( /* translators:*/esc_html__('Copyright © Company. All rights reserved %s', 'ozonair'), 'Ozonair');?>
+									<?php printf( /* translators:*/esc_html__('Copyright &copy; Company. All rights reserved %s', 'ozonair'), 'Ozonair');?>
 								</a>
 								<span class="sep"> | </span>
+								2017-<?php echo date("Y"); ?>
 						</div><!-- .site-info -->
 
 						<div class="col-4 text-right">
 							<ul class="list-inline quicklinks">
 								<li class="list-inline-item">
-									<a href="#">Privacy Policy</a>
+									<a href="#">Política de privacidad</a>
 								</li>
 								<li class="list-inline-item">
-									<a href="#">Terms of Use</a> 
+									<a href="#">Términos y condiciones de uso</a> 
 								</li>
 							</ul>
 						</div>

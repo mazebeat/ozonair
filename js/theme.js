@@ -3940,13 +3940,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
       var target = $(this.hash);
       target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
       if (target.length) {
-        $("html, body").animate(
-          {
-            scrollTop: target.offset().top - 54
-          },
-          1000,
-          "easeInOutExpo"
-        );
+        $("html, body").animate( { scrollTop: target.offset().top - 54 }, 1000, "easeInOutExpo" );
         return false;
       }
     }
@@ -3965,10 +3959,12 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
   // Collapse Navbar
   var navbarCollapse = function() {
-    if ($("#mainNav").offset().top > 100) {
-      $("#mainNav").addClass("navbar-shrink");
+    if ($("#mainNav").offset().top > 300) {
+	  $("#mainNav").addClass("navbar-shrink");
+	  $(".navbar-brand.custom-logo-link").find('img').css("display", "inline-block"); 
     } else {
-      $("#mainNav").removeClass("navbar-shrink");
+	  $("#mainNav").removeClass("navbar-shrink");
+	  $(".navbar-brand.custom-logo-link").find('img').css("display", "none"); 
     }
   };
   // Collapse now if page is not at top

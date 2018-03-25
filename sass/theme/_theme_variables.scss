@@ -20,14 +20,14 @@ $black: #000 !default;
 
 $font-family-sans-serif: "Montserrat", "Raleway", Roboto, Arial, sans-serif;
 
-$blue: #007bff !default;
+$blue: #0066ff;// #007bff !default;
 $indigo: #6610f2 !default;
-$purple: #6f42c1 !default;
+$purple: #996699; // #6f42c1 !default;
 $pink: #e83e8c !default;
 $red: #dc3545 !default;
 $orange: #fd7e14 !default;
 $yellow: #ffc107 !default;
-$green: #28a745 !default;
+$green: #99cc00; // #28a745 !default;
 $teal: #20c997 !default;
 $cyan: #17a2b8 !default;
 
@@ -40,4 +40,7 @@ $jumbotron-padding: 2rem !default;
 $jumbotron-bg: $gray-100 !default;
  
 // Theme
-$color-main: $blue
+$color-main: $blue;
+$color-main-hover: #33ccff;// #1ebcf3;
+
+$image-bg: "https://images.unsplash.com/photo-1500916570864-68c2647382b6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd590c5475d25dcffd82353e81ae548d&auto=format&fit=crop&w=1950&q=80";
