@@ -98,7 +98,7 @@ get_header();
 				</div>
 			</div>
 		
-			<?php $prod_categories = get_terms('product_cat', array('orderby' => 'name', 'order' => 'ASC', 'hide_empty' => 0)); ?>
+			<?php $prod_categories = get_terms('product_cat', array('orderby' => 'name', 'order' => 'ASC', 'hide_empty' => false, 'exclude' => array(15))); ?>
 
 	        <div class="row row-eq-height">
 				<?php 
@@ -106,7 +106,7 @@ get_header();
 						$cat_thumb_id = get_woocommerce_term_meta($prod_cat->term_id, 'thumbnail_id', true);
 						$cat_thumb_url = wp_get_attachment_image($cat_thumb_id, 'large', "", array("class" => "img-fluid"));
 				?>
-					<div class="col-md-4 col-sm-6 portfolio-item">
+					<div class="col-md-3 col-sm-6 portfolio-item">
 						<a href="<?php echo get_category_link($prod_cat->term_id); ?>" class="portfolio-link">
 							<div class="portfolio-hover">
 								<div class="portfolio-hover-content">
@@ -115,9 +115,9 @@ get_header();
 							</div>
 							<?php echo $cat_thumb_url; ?>
 						</a>
-						<div class="portfolio-caption">
+						<div class="portfolio-caption text-center">
 							<h4><a href="<?php echo get_category_link($prod_cat->term_id); ?>" class="btn btn-outline-white pill-btn" title=""><?php echo $prod_cat->name; ?></a></h4>
-							<p class="text-muted"><?php echo $prod_cat->description; ?></p>
+							<!-- <p class="text-muted"><?php // echo $prod_cat->description; ?></p> -->
 						</div>
 					</div>
 				<?php endforeach; wp_reset_query();?>
@@ -125,4 +125,23 @@ get_header();
 		</div>
 	</section>
 
+<script type="text/javascript">
+	(function($) {
+  		"use strict"; // Start of use strict
+		// Collapse Navbar
+		var navbarCollapse = function() {
+			if ($("#mainNav").offset().top > 300) {
+				$("#mainNav").addClass("navbar-shrink");
+				$(".navbar-brand.custom-logo-link").find('img').css("display", "inline-block"); 
+			} else {
+				$("#mainNav").removeClass("navbar-shrink");
+				$(".navbar-brand.custom-logo-link").find('img').css("display", "none"); 
+			}
+		};
+		// Collapse now if page is not at top
+		navbarCollapse();
+		// Collapse the navbar when page is scrolled
+		$(window).scroll(navbarCollapse);
+	})(jQuery); // End of use strict
+</script>
 <?php get_footer();?>

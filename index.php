@@ -22,7 +22,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 <div class="wrapper" id="index-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+	<section class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
 		<div class="row">
 
@@ -68,7 +68,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 	</div><!-- .row -->
 
-</div><!-- Container end -->
+</section><!-- Container end -->
 
 </div><!-- Wrapper end -->
 

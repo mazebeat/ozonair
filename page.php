@@ -15,10 +15,16 @@ get_header();
 $container   = get_theme_mod( 'understrap_container_type' );
 
 ?>
+<script>
+	var nav = document.getElementById('mainNav');
+	// nav.style.backgroundColor = "currentColor";
+	nav.classList.add('navbar-shrink');
+	nav.classList.remove('fixed-top');
+</script>
 
 <div class="wrapper" id="page-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+	<section class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
 		<div class="row">
 
@@ -49,8 +55,13 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 	</div><!-- .row -->
 
-</div><!-- Container end -->
+</section><!-- Container end -->
 
 </div><!-- Wrapper end -->
 
 <?php get_footer(); ?>
+
+<script>
+	var nav = document.getElementById('mainNav');
+	nav.querySelector('img').style.display = "inline-block"
+</script>

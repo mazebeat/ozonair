@@ -50,7 +50,7 @@ $container = get_theme_mod('understrap_container_type');
 
 	<!-- ******************* The Navbar Area ******************* -->
 	<!-- <header class="wrapper-fluid wrapper-navbar sticky-top" id="wrapper-navbar"> -->
-		<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" data-toggle="sticky-onscroll" style="font-weight: bold">
+		<nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink" id="mainNav" data-toggle="sticky-onscroll" style="font-weight: bold">
 
 			<?php if ('container' == $container) : ?>
 				<div class="container">

@@ -16,7 +16,6 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 
 ?>
-
 <div class="wrapper" id="woocommerce-wrapper">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
@@ -34,21 +33,17 @@ $container   = get_theme_mod( 'understrap_container_type' );
 				$template_path = ''; 
 				$default_path = untrailingslashit( plugin_dir_path(__FILE__) ) . '\woocommerce';
 
-					if ( is_singular( 'product' ) ) {
+				if ( is_singular( 'product' ) ) {
+					woocommerce_content();
 
-						woocommerce_content();
-
-			//For ANY product archive, Product taxonomy, product search or /shop landing page etc Fetch the template override;
-				} 	elseif ( file_exists( $default_path . $template_name ) )
-					{
+				//For ANY product archive, Product taxonomy, product search or /shop landing page etc Fetch the template override;
+				} elseif ( file_exists( $default_path . $template_name ) )	{
 					wc_get_template( $template_name, $args, $template_path, $default_path );
-
-			//If no archive-product.php template exists, default to catchall;
-				}	else  {
+				//If no archive-product.php template exists, default to catchall;
+				} else {
 					woocommerce_content( );
 				}
-
-			;?>
+			?>
 
 			</main><!-- #main -->
 
@@ -61,6 +56,6 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 </div><!-- Container end -->
 
-</div><!-- Wrapper end -->
+</section><!-- Wrapper end -->
 
 <?php get_footer(); ?>
