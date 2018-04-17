@@ -87,7 +87,7 @@ if ( ! function_exists( 'understrap_post_nav' ) ) :
 
 		if ( ! $next && ! $previous ) {
 			return;
-		}
+		} 
 		?>
 				<nav class="container navigation post-navigation">
 					<h2 class="sr-only"><?php _e( 'Post navigation', 'understrap' ); ?></h2>
@@ -107,3 +107,16 @@ if ( ! function_exists( 'understrap_post_nav' ) ) :
 		<?php
 	}
 endif;
+
+// Remove each style one by one
+// add_filter('woocommerce_enqueue_styles', 'jk_dequeue_styles');
+function jk_dequeue_styles($enqueue_styles)
+{
+    unset($enqueue_styles['woocommerce-general']); // Remove the gloss
+    unset($enqueue_styles['woocommerce-layout']); // Remove the layout
+    unset($enqueue_styles['woocommerce-smallscreen']); // Remove the smallscreen optimisation
+    return $enqueue_styles;
+}
+
+// Or just remove them all in one line
+// add_filter('woocommerce_enqueue_styles', '__return_false');

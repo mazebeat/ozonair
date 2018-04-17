@@ -11,7 +11,7 @@ get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<section class="wrapper" id="full-width-page-wrapper">
+<section class="wrapper bg-light" id="full-width-page-wrapper">
 
 	<section class="<?php echo esc_attr( $container ); ?>" id="content">
 

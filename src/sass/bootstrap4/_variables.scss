@@ -156,7 +156,7 @@ $link-hover-decoration:     underline !default;
 //
 // Style p element.
 
-$paragraph-margin-bottom:   1rem !default;
+$paragraph-margin-bottom:   .8rem !default;
 
 
 // Grid breakpoints
@@ -190,7 +190,7 @@ $container-max-widths: (
 @include _assert-ascending($container-max-widths, "$container-max-widths");
 
 
-// Grid columns
+// Grid columns  
 //
 // Set the number of columns and specify the width of the gutters.
 
@@ -221,8 +221,8 @@ $transition-fade:             opacity .15s linear !default;
 $transition-collapse:         height .35s ease !default;
 
 
-// Fonts
-//
+// Fonts 
+// 
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
@@ -231,9 +231,9 @@ $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberati
 $font-family-base:            $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
 
-$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$font-size-base:              1.2rem !default; // Assumes the browser default, typically `16px`
 $font-size-lg:                ($font-size-base * 1.25) !default;
-$font-size-sm:                ($font-size-base * .875) !default;
+$font-size-sm:                ($font-size-base * .875) !default;  
 
 $font-weight-light:           300 !default;
 $font-weight-normal:          400 !default;

@@ -132,3 +132,40 @@ function understrap_wc_form_field_args( $args, $key, $value = null ) {
 	return $args;
 }
 
+
+/**
+ * Check if WooCommerce is active
+ **/
+if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))) {
+    // remove product thumbnail and title from the shop loop
+    remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
+	remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
+	remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5);		
+	remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
+
+
+    // add the product thumbnail and title back in with custom structure
+    add_action('woocommerce_before_shop_loop_item_title', 'sls_woocommerce_template_loop_product_thumbnail', 10);
+    function sls_woocommerce_template_loop_product_thumbnail()
+    {
+        echo '<a class="thumbnail product-img-link" title="' . get_the_title() . '" href="' . get_the_permalink() . '">' . woocommerce_get_product_thumbnail() . '</a>';
+        echo '<h3 class="text-center product-title"><a class="btn btn-outline-info btn-block" href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
+    }
+
+}
+
+function woocommerce_get_product_thumbnail($size = 'shop_catalog', $deprecated1 = 0, $deprecated2 = 0) {
+	global $post;
+	$image_size = apply_filters('single_product_archive_thumbnail_size', $size);
+
+	if (has_post_thumbnail()) {
+		$props = wc_get_product_attachment_props(get_post_thumbnail_id(), $post);
+		return get_the_post_thumbnail($post->ID, $image_size, array(
+			'title' => $props['title'],
+			'alt' => $props['alt'],
+			'class' => 'img-thumbnail rounded mx-auto product-img'
+		));
+	} elseif (wc_placeholder_img_src()) {
+		return wc_placeholder_img($image_size);
+	}
+} 

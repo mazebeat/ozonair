@@ -1,8 +1,8 @@
 <?php
 /**
- * Single product short description
+ * Description tab
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/single-product/short-description.php.
+ * This template can be overridden by copying it to yourtheme/woocommerce/single-product/tabs/description.php.
  *
  * HOWEVER, on occasion WooCommerce will need to update template files and you
  * (the theme developer) will need to copy the new files to your theme to
@@ -13,7 +13,7 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version 	3.3.2
+ * @version     2.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -22,11 +22,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $post;
 
-if ( ! $post->post_excerpt ) {
-	return;
-}
+$heading = esc_html( apply_filters( 'woocommerce_product_description_heading', __( 'Description', 'woocommerce' ) ) );
 
 ?>
-<div itemprop="description" class="">
-	<?php echo apply_filters( 'woocommerce_short_description', $post->post_excerpt ) ?>
-</div>
+
+<?php if ( $heading ) : ?>
+  <h2><?php echo $heading; ?></h2>
+<?php endif; ?>
+
+<?php the_content(); ?>

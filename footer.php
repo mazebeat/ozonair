@@ -16,7 +16,7 @@ $container = get_theme_mod('understrap_container_type');
 
 	<footer class="wrapper" id="wrapper-footer">
 
-		<!-- <div class="<?php echo esc_attr($container); ?>"> -->
+		<!-- <div class="<?php // echo esc_attr($container); ?>"> -->
 		<?php if ('container' == $container): ?>
 			<div class="container">
 		<?php else: ?>
