@@ -3,15 +3,9 @@
 @font-face {
 	font-family: 'Bebas Neue';
 	src: url('../fonts/BebasNeue-Regular.ttf') format('truetype');
-	//  src: url('#{$fa-font-path}/FontAwesome.otf') format('opentype'); // used when developing fonts
 	font-weight: normal;
 	font-style: normal;
 }
-
-// Use this file to overwrite the basic Bootstrap variables and add your own variables
-// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
-// Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
-/* $primary: #8753d5;  */ // Thats a sample how you could change a BootStrap variable.
 
 //  Bootstrap 
 $white: #fff !default;
@@ -42,13 +36,8 @@ $green: #99cc00; // #28a745 !default;
 $teal: #20c997 !default;
 $cyan: #17a2b8 !default;
 
-// $spacer: 1rem !default;
-// $navbar-padding-y : ($spacer / 2) !default; 
-// $navbar-padding-x : $spacer !default;
-// $navbar-nav-link-padding-x : .5rem !default;
-
-$jumbotron-padding: 2rem !default;  
-$jumbotron-bg: $gray-100 !default;
+// $jumbotron-padding: 1rem !default;  
+// $jumbotron-bg: $gray-100 !default;
  
 // Theme
 $color-main: $blue;

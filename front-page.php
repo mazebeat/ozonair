@@ -18,7 +18,6 @@ get_header();
 
 ?>
 <style>
-
 .bounce {
   display: inline-block;
   position: relative;
@@ -58,6 +57,18 @@ get_header();
     100% { top: 0; }
 }
 
+header.masthead {
+  height: 100vh;
+  color: white;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center 75%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .jumbotron {
   position: absolute;
   top: 50%;
@@ -67,7 +78,7 @@ get_header();
 }
 </style>
 	<!-- Header -->
-    <header class="masthead text-center">
+    <header class="masthead text-center" style="background-image: url(<?php echo wp_get_attachment_url(249); ?>);">
 		<div class="jumbotron jumbotron-fluid">
 			<div class="container">
 				<div class="row align-items-center">
@@ -115,7 +126,7 @@ get_header();
 						<i class="fa fa-leaf fa-stack-1x fa-inverse"></i>
 					</span>
 					<!-- <h4 class="service-heading">E-Commerce</h4> -->
-					<p class="text-muted"> Desinfectante ecológico, su uso no perjudica al medio ambiente.</p>
+					<p class="text-muted">Desinfectante ecológico, su uso no perjudica al medio ambiente y no deja residuos.</p>
 				</div>
 				<div class="col">
 					<span class="fa-stack fa-4x">
@@ -131,7 +142,7 @@ get_header();
 						<i class="fa fa-ban fa-stack-1x fa-inverse"></i>
 					</span>
 					<!-- <h4 class="service-heading">Web Security</h4> -->
-					<p class="text-muted">Destruye los microrganismos generadores de olores desagradables.</p>
+					<p class="text-muted">Destruye los microorganismos generadores de olores desagradables.</p>
 				</div>
 				<div class="col">
 					<span class="fa-stack fa-4x">
@@ -177,6 +188,21 @@ get_header();
 						</div>
 					</div>
 				<?php endforeach; wp_reset_query();?>
+			</div>
+		</div>
+	</section>
+
+	<section class="" id="represent">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col text-center">
+					<h2 class="section-heading">Representantes y Distribuidores exclusivos en Chile</h2>
+					<div class="row justify-content-center">
+						<div class="col-5">
+							<img src="<?php echo wp_get_attachment_url(248); ?>" alt="Main Logotype" id="front-logotype" class="img-fluid">
+						</div>
+					</div>
+				</div>								
 			</div>
 		</div>
 	</section>

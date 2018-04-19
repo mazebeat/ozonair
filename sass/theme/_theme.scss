@@ -45,6 +45,13 @@ section {
   }
 }
 
+footer {
+	a {
+		color: $white;
+		text-decoration: none;
+	}
+}
+
 @media (min-width: 768px) {
   section {
     padding: 100px 0;
@@ -60,13 +67,14 @@ section {
 .btn {
   font-family: $fonts;
   letter-spacing: 0.2rem;
+  white-space: normal !important; 
 }
 
-.btn-xl {
+.btn-xl { 	 
   padding: 20px 40px;
 }
 
-.btn-primary {
+.btn-primary { 
   background-color: $color-main;
   border-color: $color-main;
 
@@ -154,7 +162,8 @@ img::-moz-selection {
     .nav-link {
       padding: 0.75em 0;
       letter-spacing: 0.2rem;
-      color: $color-main;
+	  color: $color-main;
+	  font-weight: normal; 
     }
 
   }
@@ -198,7 +207,7 @@ img::-moz-selection {
 header.masthead {
   height: 100vh;
   color: white;
-  background-image: url("https://images.unsplash.com/photo-1500916570864-68c2647382b6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd590c5475d25dcffd82353e81ae548d&auto=format&fit=crop&w=1950&q=80");
+  background-image: url($image-bg);
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center 75%;

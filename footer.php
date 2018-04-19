@@ -14,7 +14,7 @@ $container = get_theme_mod('understrap_container_type');
 
 <?php get_sidebar('footerfull');?>
 
-	<footer class="wrapper" id="wrapper-footer">
+	<footer class="wrapper text-white bg-dark" id="wrapper-footer">
 
 		<!-- <div class="<?php // echo esc_attr($container); ?>"> -->
 		<?php if ('container' == $container): ?>
@@ -28,12 +28,11 @@ $container = get_theme_mod('understrap_container_type');
 					<div class="row justify-content-between">
 
 						<div class="site-info col-6">
-
-								<a href="<?php echo esc_url(__('http://www.ozonair.cl/', 'ozonair')); ?>">
-									<?php printf( /* translators:*/esc_html__('Copyright &copy; Company. All rights reserved %s', 'ozonair'), 'Ozonair');?>
-								</a>
-								<span class="sep"> | </span>
-								2017-<?php echo date("Y"); ?>
+							<a href="<?php echo esc_url(__('http://www.ozonair.cl/', 'ozonair')); ?>">
+								<?php printf( /* translators:*/esc_html__('Copyright &copy; Company. All rights reserved %s', 'ozonair'), 'Ozonair');?>
+							</a>
+							<span class="sep"> | </span>
+							2017-<?php echo date("Y"); ?>
 						</div><!-- .site-info -->
 
 						<div class="col-4 text-right">
@@ -41,13 +40,10 @@ $container = get_theme_mod('understrap_container_type');
 								<li class="list-inline-item">
 									<a href="#">Política de privacidad</a>
 								</li>
-								<li class="list-inline-item">
-									<a href="#">Términos y condiciones de uso</a> 
-								</li>
 							</ul>
 						</div>
 
-					</><!-- #colophon -->
+					</div><!-- #colophon -->
 
 				</div><!--col end -->
 
